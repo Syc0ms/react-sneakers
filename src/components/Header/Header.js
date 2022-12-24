@@ -19,7 +19,7 @@ const Header = () => {
                                     <span>1200 rub</span>
                                 </li>
                                 <li>
-                                    <img src="/img/Like.svg" alt="" />
+                                    <img src="img/Like.png" alt="" />
 
                                 </li>
                                 <li>

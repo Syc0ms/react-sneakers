@@ -1,9 +1,12 @@
+button, input {
+    font-family: "Inter";
+}
 .content {
     padding-bottom: 50px;
     margin-left: 35px;
     margin-right: 35px;
 
-
+    
     h1 {
         font-family: 'Inter';
         font-style: normal;
@@ -14,7 +17,7 @@
     }
     img {
         width: 140px;
-        height: 140px;
+        height: 120px;
         margin: auto;
         display: flex;
     }
@@ -35,8 +38,14 @@
     height: 260px;
     padding: 20px;
     border-radius: 40px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
     p {
         text-align: center;
+        font-size: 16px;
+    }
+    &:hover {
+        box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06) ;
+        transform: translateY(-5px);
     }
 }
 .cardBottom {
@@ -68,7 +77,80 @@
 }
 
 .mainSneakers {
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    gap: 40px;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+}
+
+.contentInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.imgInput {
+    form {
+        display: flex;
+        align-items: center;
+        border: 1px solid #F3F3F3;
+        border-radius: 10px;
+        padding: 0 15px;
+    }
+
+    input {
+        width: 200px;
+        height: 45px;
+        border: 0;
+        outline: none;
+        background: none;
+    }
+    img {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        
+    }  
+
+}
+
+
+@media screen and (max-width: 1100px){
+   
+    .mainSneakers {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto; 
+        place-items: center;
+        gap: 30px;
+
+    }
+}
+@media screen and (max-width: 876px){
+    .mainSneakers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto; 
+        place-items: center;
+        gap: 30px;
+
+    }
+}
+@media screen and (max-width: 596px){
+    
+    .contentInput {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        margin-bottom: 10%;
+    }
+}
+@media screen and (max-width: 616px){
+    .mainSneakers {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto; 
+        place-items: center;
+        gap: 30px;
+    }
 }

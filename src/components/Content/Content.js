@@ -1,55 +1,32 @@
 import classes from "./Content.module.scss"
+import Card from "./Card"
 
 const Content = () => {
     return (
         <div className={classes.content}>
-            <div>
-                <h1>All Trexner</h1>
+             <div className={classes.test}>
+                <div className={classes.contentInput}>
+                    <h1>All Trexner</h1>
+                    <div className={classes.imgInput}>
+                        <form action="">
+                            <img src="/img/search.svg" alt="Search" />
+                            <input placeholder="Search..." type="text" name="" id="" />
+                        </form>
+                    </div>
+                </div>
                 <div className={classes.mainSneakers}>
-                    <div className= {classes.card}>
-                        <img src="/img/koshik1.jpg" alt="" />
-                        <p>I die on your body samiy klasniy trex iz vsex trexov</p>
-                            <div className={classes.cardBottom}>
-                                <div className={classes.cardInfo}>
-                                    <span>Gin:</span>
-                                    <b>122.999 AMD</b>
-                                </div>
-                                <button><img src="/img/buttonPlus.svg" alt="" /></button>
-                        </div>
-                    </div>
-                    <div className= {classes.card}>
-                        <img src="/img/sneaker2.jpg" alt="" />
-                        <p>I die on your body samiy klasniy trex iz vsex trexov</p>
-                            <div className={classes.cardBottom}>
-                                <div className={classes.cardInfo}>
-                                    <span>Gin:</span>
-                                    <b>122.999 AMD</b>
-                                </div>
-                                <button><img src="/img/buttonPlus.svg" alt="" /></button>
-                        </div>
-                    </div>
-                    <div className= {classes.card}>
-                        <img src="/img/sneaker3.jpg" alt="" />
-                        <p>I die on your body samiy klasniy trex iz vsex trexov</p>
-                            <div className={classes.cardBottom}>
-                                <div className={classes.cardInfo}>
-                                    <span>Gin:</span>
-                                    <b>122.999 AMD</b>
-                                </div>
-                                <button><img src="/img/buttonPlus.svg" alt="" /></button>
-                        </div>
-                    </div>
-                    <div className= {classes.card}>
-                        <img src="/img/sneaker4.jpg" alt="" />
-                        <p>I die on your body samiy klasniy trex iz vsex trexov</p>
-                            <div className={classes.cardBottom}>
-                                <div className={classes.cardInfo}>
-                                    <span>Gin:</span>
-                                    <b>122.999 AMD</b>
-                                </div>
-                                <button><img src="/img/buttonPlus.svg" alt="" /></button>
-                        </div>
-                    </div>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    
+                    
                 </div>
             </div>
             

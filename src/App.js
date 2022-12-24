@@ -1,10 +1,12 @@
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
-import './App.scss';
+import classes from './App.module.scss';
+import Basket from './components/basketTable/Basket';
 
 const App = () => {
   return (
-    <div className='wrapper'>
+    <div className={classes.wrapper}>
+      <Basket />
       <Header />
       <hr />
       <Content />
