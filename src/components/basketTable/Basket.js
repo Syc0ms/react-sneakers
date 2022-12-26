@@ -1,12 +1,12 @@
 import classes from "./Basket.module.scss"
-const Basket = () => {
+const Basket = (props) => {
     return (
-    <div className={classes.overlay} style={{display: "none"}}>
+    <div className={classes.overlay} >
         <div  className={classes.drawer}>
             <div className={classes.itemName}>
                 <h2>Zambyux</h2>
                 <div className={classes.close}>
-                    <img src="/img/close.svg" alt="" />
+                    <img onClick={props.onClick} src="/img/close.svg" alt="" />
                     </div>
             </div>
             <div className={classes.mainItems}>

@@ -1,19 +1,29 @@
+import { useState } from "react";
 import classes from "./Card.module.scss"
-const Card = () => {
+
+
+const Card = (props) => {
+    const onClickPlus = () => {
+        setIsAdded(!isAdded)
+    } 
+    const [isAdded, setIsAdded] = useState(true)    
     return (
-        <div className= {classes.card}>
+        
+        <div key={props.id} className= {classes.card}>
             <div className={classes.favorite}>
-                <img src="/img/liked-disactive.svg" alt="" />
+                <img src="/img/liked-disactive.png" alt="" />
                 </div>
-                    <img src="/img/koshik1.jpg" alt="" />
-                    <p>I die on your body samiy klasniy trex iz vsex trexov</p>
+                    <img src={props.img} alt="" />
+                    <p> {props.description}</p>
                     <div className={classes.cardBottom}>
                         <div className={classes.cardInfo}>
                         <span>Gin:</span>
-                        <b>122.999 AMD</b>
+                        <b>{props.value} AMD</b>
                         </div>
-                           <button><img src="/img/buttonPlus.svg" alt="" /></button>
+                           <button onClick={onClickPlus}><img src={ isAdded ?  "/img/buttonPlus.svg" : "img/clickedPlus.png"} alt=""/></button>
                         </div>
                     </div>
-)}
+        )
+        
+}
 export default Card;

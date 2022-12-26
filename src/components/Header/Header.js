@@ -1,6 +1,7 @@
 import classes from "./Header.module.scss"
 
-const Header = () => {
+const Header = (props) => {
+    
     return (
         <div className={classes.main}> 
             <header>
@@ -14,7 +15,7 @@ const Header = () => {
                         </div>
                         <div className= {classes.headerRight}>
                             <ul>
-                                <li className={classes.profileKorzina}>
+                                <li onClick={props.onClick} className={classes.profileKorzina}>
                                     <img src="/img/Korzina.svg" alt="" />
                                     <span>1200 rub</span>
                                 </li>
