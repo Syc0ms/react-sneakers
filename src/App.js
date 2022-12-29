@@ -6,15 +6,22 @@ import { useState } from 'react';
 
 const App = () => {
   const [basketOpened, setBasketOpened] = useState(false)
-  function onClickBasket () {
+  const [cartShoes, setCartShoes] = useState([])
+
+  const onClickBasket = () => {
     setBasketOpened(!basketOpened)
   }
+
+  const test = (obj) => {
+    setCartShoes(prev => prev ? [...prev, obj]: null )
+  }
+
   return (
     <div className={classes.wrapper}>
-      {basketOpened ? <Basket onClick = {onClickBasket}/> : null}
+      {basketOpened ? <Basket key={"aa"} items={cartShoes} onClick = {onClickBasket}/> : null}
       <Header onClick = {onClickBasket}/>
       <hr />
-      <Content />
+      <Content test = {test} />
     </div>
   );
 }

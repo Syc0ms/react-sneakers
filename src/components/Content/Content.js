@@ -7,13 +7,18 @@ import axios from "axios"
 
 
 
-const Content = () => {
+const Content = ({test}) => {
+   
     const [shoes, setShoes] = useState([])
     useEffect(() => {
         fetch('https://63aa0107594f75dc1dc68e02.mockapi.io/shoes')
         .then(response => response.json())
         .then(data => setShoes(data));
     }, []);
+
+    const addToCard = (obj) => {
+        test(obj)
+    }   
     return (
         <div className={classes.content}>
              <div className={classes.test}>
@@ -30,13 +35,14 @@ const Content = () => {
                 
                     {
                     
-                    shoes.map((arrayObjOfShoes, ) =>
-                        <Card 
+                    shoes.map((arrayObjOfShoes) =>
+                        <Card
                             key={arrayObjOfShoes.id}
                             description = {arrayObjOfShoes.description}
                             value = {arrayObjOfShoes.value}
                             img = {arrayObjOfShoes.img}
                             id = {arrayObjOfShoes.id}
+                            addToCard = {addToCard}
                         />
                     
                     )} 
