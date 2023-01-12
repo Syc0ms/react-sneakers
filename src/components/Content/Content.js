@@ -11,7 +11,7 @@ const Content = ({test}) => {
    
     const [shoes, setShoes] = useState([])
     useEffect(() => {
-        fetch('https://63aa0107594f75dc1dc68e02.mockapi.io/shoes')
+        fetch('http://localhost:8000')
         .then(response => response.json())
         .then(data => setShoes(data));
     }, []);
@@ -19,15 +19,28 @@ const Content = ({test}) => {
     const addToCard = (obj) => {
         test(obj)
     }   
+    const deleteSearchValue = () => {
+        setSearchValue("")
+    } 
+
+    const [searchValue, setSearchValue] = useState("")
+    const checkInputValue = (event) => {
+            setSearchValue(event.target.value)
+           
+            
+        
+    }
     return (
         <div className={classes.content}>
              <div className={classes.test}>
                 <div className={classes.contentInput}>
-                    <h1>All Trexner</h1>
+                    <h1>{searchValue ? `Searching for your: "${searchValue}"` : "All sneakers"}</h1>
                     <div className={classes.imgInput}>
-                        <form action="">
-                            <img src="/img/search.svg" alt="Search" />
-                            <input placeholder="Search..." type="text" name="" id="" />
+                        <form className={classes.form} action="">
+                            <img className={classes.searchBtn} src="/img/search.svg" alt="Search" />
+                            <input className={classes.searchBar} onChange={checkInputValue} value={searchValue} placeholder="Search..." type="text" name="" id="" />
+                            {searchValue ? <img className={classes.imgClose} onClick={deleteSearchValue} src="/img/close.svg" alt="" /> : null}
+
                         </form>
                     </div>
                 </div>
@@ -35,7 +48,7 @@ const Content = ({test}) => {
                 
                     {
                     
-                    shoes.map((arrayObjOfShoes) =>
+                    shoes.filter((item) => item.description.toLowerCase().includes(searchValue.toLowerCase())).map((arrayObjOfShoes) =>
                         <Card
                             key={arrayObjOfShoes.id}
                             description = {arrayObjOfShoes.description}
